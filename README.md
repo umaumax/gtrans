@@ -17,22 +17,26 @@ gtrans # send clipboard
 * supports proxy
 
 ----
+----
+----
+----
 
-## this is also repository of pip package sample
+## This is also repository of pip package sample for me
+* 基本的な構成
 ```
 $ tree .
 ├── README.md
+├── entry_points.cfg
 ├── gtrans
 │   ├── __init__.py
 │   └── gtrans.py
-├── requirements.txt
+├── setup.cfg
 └── setup.py
 
-1 directory, 5 files
+1 directory, 6 files
 ```
 
-* 最低限必要なもの
-  * `__init__.py`: コマンドとして配布するときにも必要(空ファイルでも問題ない)
+* `__init__.py`: ライブラリとしてはもちろんコマンドとして配布するときにも必ず必要(空ファイルでも問題ない)
 
 ### 最近の方法
 * [setuptools: Pythonパッケージ作成 \- Heavy Watal]( https://heavywatal.github.io/python/setuptools.html )
@@ -43,7 +47,7 @@ $ tree .
   * new:`setup.cfg`から`entry_points.cfg`を読み込むようにする
   * old:(setup.py の 関数 setup の中に entry_points を加える)
 
-### packageの試し方
+### how to do trial and error
 #### install(update)
 ```
 pip install .
