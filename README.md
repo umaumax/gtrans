@@ -3,6 +3,8 @@ google translate command
 
 ## how to install
 ```
+# for avoiding 'pip Installing collected packages: UNKNOWN'
+pip install setuptools --upgrade
 pip install https://github.com/umaumax/gtrans/archive/master.tar.gz
 ```
 
