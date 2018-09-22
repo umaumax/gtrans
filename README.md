@@ -1,6 +1,8 @@
 # gtrans
 google translate command
 
+__ now googletrans API maybe changed ...__
+
 ## how to install
 ```
 # for avoiding 'pip Installing collected packages: UNKNOWN'
