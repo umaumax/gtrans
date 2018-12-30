@@ -1,8 +1,7 @@
 # gtrans
 google translate command
 
-* __ now googletrans API maybe changed ...__
-* FYI: [python \- Why "Googletrans\.Translator" suddenly stopped working? \- Stack Overflow]( https://stackoverflow.com/questions/52446811/why-googletrans-translator-suddenly-stopped-working )
+~~* FYI: [python \- Why "Googletrans\.Translator" suddenly stopped working? \- Stack Overflow]( https://stackoverflow.com/questions/52446811/why-googletrans-translator-suddenly-stopped-working )~~
 
 ## how to install
 ```
