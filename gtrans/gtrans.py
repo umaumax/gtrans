@@ -13,6 +13,7 @@ from urllib.parse import parse_qs
 class CallbackServer(http.server.BaseHTTPRequestHandler):
     def __init__(self, callback, *args):
         self.callback = callback
+        self.translator = Translator(proxies={'http': os.getenv('http_proxy', os.getenv('HTTP_PROXY')), 'https': os.getenv('https_proxy', os.getenv('HTTPS_PROXY'))})
         http.server.BaseHTTPRequestHandler.__init__(self, *args)
 
     def do_GET(self):
@@ -55,9 +56,9 @@ def callback_method(query):
     if isascii(text):
         lang = 'ja'
     try:
-        text = (Translator().translate(text, dest=lang).text)
-    except:
-        text = '[network error]'
+        text = (self.translator.translate(text, dest=lang).text)
+    except Exception as e:
+        text = '[network error]:' + str(e)
     return [text]
 
 
@@ -89,19 +90,23 @@ def print_trans_result(text):
     print("{0}".format(text), end="")
     print('------------')
 
+    translator = Translator(proxies={'http': os.getenv('http_proxy', os.getenv('HTTP_PROXY')), 'https': os.getenv('https_proxy', os.getenv('HTTPS_PROXY'))})
+
     try:
-        text = (Translator().translate(text, dest='ja').text)
-    except:
-        print('[network error]')
+        text = (translator.translate(text, dest='ja').text)
+    except Exception as e:
+        text = '[network error]:' + str(e)
+        print(text)
         sys.exit(1)
     print('-----ja-----')
     print(text)
     print('------------')
 
     try:
-        text = (Translator().translate(text, dest='en').text)
-    except:
-        print('[network error]')
+        text = (translator.translate(text, dest='en').text)
+    except Exception as e:
+        text = '[network error]:' + str(e)
+        print(text)
         sys.exit(1)
     print('-----en-----')
     print(text)
