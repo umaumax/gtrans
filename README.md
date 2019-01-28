@@ -17,6 +17,9 @@ echo 'cat' | gtrans
 gtrans # send clipboard
 ```
 
+## Dependency
+* [GitHub \- ssut/py\-googletrans: \(unofficial\) Googletrans: Free and Unlimited Google translate API for Python\. Translates totally free of charge\.]( https://github.com/ssut/py-googletrans )
+
 ## NOTE
 * supports proxy
 
